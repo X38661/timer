@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #f5f5f7 0%, #e8e8e8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 4rem 2rem;
+    border-radius: 32px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    backdrop-filter: blur(20px);
+    width: 95%;
+    max-width: 800px;
+}
+
+.timer {
+    text-align: center;
+    width: 100%;
+}
+
+.time-display {
+    font-size: 5rem;
+    font-weight: 300;
+    color: #1d1d1f;
+    margin-bottom: 3rem;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite ease-in-out;
+    font-family: 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    letter-spacing: -2px;
+    width: 100%;
+    overflow: visible;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.btn {
+    width: 100%;
+    height: 80px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn.start {
+    background: #34c759;
+    box-shadow: 0 8px 20px rgba(52, 199, 89, 0.3);
+}
+
+.btn.pause {
+    background: #ff9500;
+    box-shadow: 0 8px 20px rgba(255, 149, 0, 0.3);
+}
+
+.btn.reset {
+    background: #ff3b30;
+    box-shadow: 0 8px 20px rgba(255, 59, 48, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    filter: brightness(0.95);
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+.btn-text {
+    font-size: 1.25rem;
+}
+
+/* 添加响应式设计 */
+@media (min-width: 768px) {
+    .container {
+        padding: 5rem 3rem;
+    }
+
+    .time-display {
+        font-size: 7rem;
+    }
+
+    .btn {
+        height: 90px;
+        font-size: 1.4rem;
+    }
+
+    .icon {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 5rem 4rem;
+    }
+
+    .time-display {
+        font-size: 8.5rem;
+    }
+}
+
+/* 添加优雅的动画效果 */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+    100% { transform: scale(1); }
+} 
