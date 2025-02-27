@@ -3,13 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>优雅计时器</title>
+    <title>晓鑫计时器</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <div class="logo">
+                <svg class="brand-logo" viewBox="0 0 100 100" width="50" height="50">
+                    <!-- 外圆 -->
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <!-- 中字的简化 -->
+                    <rect x="35" y="30" width="30" height="2" fill="currentColor"/>
+                    <rect x="48" y="30" width="2" height="40" fill="currentColor"/>
+                    <rect x="35" y="49" width="30" height="2" fill="currentColor"/>
+                    <!-- 1的简化 -->
+                    <rect x="43" y="38" width="14" height="24" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <!-- 合字的简化 -->
+                    <path d="M38 60 L62 60 L50 70 Z" fill="currentColor"/>
+                </svg>
+            </div>
+            <h1 class="title">中壹合计时器</h1>
+            <p class="subtitle">简约而不简单的计时体验</p>
+        </div>
         <div class="timer">
-            <div class="time-display">00:00:00</div>
+            <div class="time-label">已用时间</div>
+            <div class="time-display">00:00:00.00</div>
             <div class="controls">
                 <button id="startBtn" class="btn start">
                     <svg class="icon" viewBox="0 0 24 24">
@@ -30,6 +49,10 @@
                     <span class="btn-text">重置</span>
                 </button>
             </div>
+        </div>
+        <div class="footer">
+            <div class="decoration-line"></div>
+            <p class="footer-text">专注于当下的每一秒</p>
         </div>
     </div>
     <script src="script.js"></script>
