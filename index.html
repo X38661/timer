@@ -1,82 +1,680 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中壹合 - 专业技术服务</title>
+    <title>中壹合 | AI时代的浪潮儿 - 引领AI技术革命</title>
+    <meta name="description" content="中壹合新媒体公司 - 帮助小白、创业者和企业老板掌握AI技能，成为AI时代的浪潮引领者">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3a7f93985e.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav>
-        <div class="nav-content">
-            <div class="logo">中壹合</div>
-            <div class="nav-links">
-                <a href="#home">首页</a>
-                <a href="#about">关于我们</a>
-                <a href="#services">服务项目</a>
-                <a href="#contact">联系我们</a>
-            </div>
-        </div>
-    </nav>
+    <!-- 波浪背景元素 -->
+    <div class="wave-container">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+    </div>
 
-    <!-- 首页部分 -->
+    <!-- 顶部导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <svg viewBox="0 0 50 24" class="logo-icon">
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#1E88E5" />
+                                <stop offset="100%" stop-color="#00BFA5" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M1,12 C5,5 10,18 15,12 C20,6 25,18 30,12 C35,6 40,18 45,12 C50,6 49,12 49,12" stroke="url(#logo-gradient)" stroke-width="3" fill="none"/>
+                        <circle cx="15" cy="12" r="3" fill="#1E88E5" />
+                        <circle cx="30" cy="12" r="3" fill="#00BFA5" />
+                    </svg>
+                    <span class="logo-text">中壹合</span>
+                    <span class="logo-subtitle">AI时代的浪潮儿</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">首页</a></li>
+                    <li><a href="#academy" class="nav-link">AI学院</a></li>
+                    <li><a href="#workflow" class="nav-link">AI工作流</a></li>
+                    <li><a href="#digital-human" class="nav-link">数字人系统</a></li>
+                    <li><a href="#training" class="nav-link">AI培训</a></li>
+                    <li><a href="#resources" class="nav-link">资源中心</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="#contact" class="btn btn-primary header-cta">联系我们</a>
+        </div>
+    </header>
+
+    <!-- 首页/英雄区域 -->
     <section id="home" class="hero">
-        <div class="hero-text">
-            <h1>中壹合科技</h1>
-            <p>用科技创新，助力企业发展</p>
-            <a href="#contact" class="cta-button">了解更多</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title"><span class="gradient-text">AI时代的中壹合</span><br></h1>
+                <p class="hero-subtitle">让每个人都能成为AI时代的弄潮儿，不只是跟随浪潮，更能驾驭浪潮</p>
+                <div class="hero-buttons">
+                    <a href="#academy" class="btn btn-primary">探索AI学院</a>
+                    <a href="#contact" class="btn btn-outline">免费咨询</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <svg viewBox="0 0 400 300" class="hero-svg">
+                    <defs>
+                        <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#1E88E5" stop-opacity="0.8" />
+                            <stop offset="100%" stop-color="#00BFA5" stop-opacity="0.8" />
+                        </linearGradient>
+                    </defs>
+                    <!-- 抽象AI图形 -->
+                    <circle cx="200" cy="150" r="80" fill="url(#hero-gradient)" opacity="0.2" />
+                    <circle cx="200" cy="150" r="60" fill="url(#hero-gradient)" opacity="0.3" />
+                    <circle cx="200" cy="150" r="40" fill="url(#hero-gradient)" opacity="0.4" />
+                    <!-- 连接线 -->
+                    <path d="M160,110 L240,190 M160,190 L240,110 M140,150 L260,150 M200,90 L200,210" 
+                          stroke="url(#hero-gradient)" stroke-width="2" />
+                    <!-- 节点 -->
+                    <circle cx="160" cy="110" r="6" fill="#fff" stroke="#1E88E5" stroke-width="2" />
+                    <circle cx="240" cy="190" r="6" fill="#fff" stroke="#1E88E5" stroke-width="2" />
+                    <circle cx="160" cy="190" r="6" fill="#fff" stroke="#00BFA5" stroke-width="2" />
+                    <circle cx="240" cy="110" r="6" fill="#fff" stroke="#00BFA5" stroke-width="2" />
+                    <circle cx="140" cy="150" r="6" fill="#fff" stroke="#1E88E5" stroke-width="2" />
+                    <circle cx="260" cy="150" r="6" fill="#fff" stroke="#00BFA5" stroke-width="2" />
+                    <circle cx="200" cy="90" r="6" fill="#fff" stroke="#1E88E5" stroke-width="2" />
+                    <circle cx="200" cy="210" r="6" fill="#fff" stroke="#00BFA5" stroke-width="2" />
+                </svg>
+            </div>
         </div>
     </section>
 
-    <!-- 关于我们 -->
-    <section id="about" class="about">
-        <div class="section-content">
-            <h2>关于我们</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>中壹合科技是一家专注于技术创新的企业，致力于为客户提供专业的技术解决方案。</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3>5年+</h3>
-                            <p>行业经验</p>
+    <!-- 品牌特性 -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">我们的<span class="gradient-text">品牌特性</span></h2>
+                <p class="section-description">为什么选择中壹合作为您的AI赋能伙伴</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>前瞻视野</h3>
+                    <p>站在AI技术前沿，把握未来发展方向和趋势，让您提前洞察行业变革</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>实用导向</h3>
+                    <p>注重实际应用，教授真正可落地的AI技能，即学即用，创造实际价值</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>包容开放</h3>
+                    <p>无论您是小白还是专业人士，都能找到适合自己的AI学习路径和工具</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>创新思维</h3>
+                    <p>鼓励用AI创造新价值，突破传统思维局限，发现更多可能性</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI学院 -->
+    <section id="academy" class="academy">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI<span class="gradient-text">学院</span></h2>
+                <p class="section-description">系统化的AI能力培养课程，从入门到精通的全方位学习体系</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-badge beginner">初级</div>
+                    <div class="course-icon">
+                        <img src="https://via.placeholder.com/100x100" alt="AI小白入门">
+                    </div>
+                    <h3>AI小白入门</h3>
+                    <p>零基础快速入门AI应用，掌握基本AI工具的使用方法和应用场景</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> AI基础概念解析</li>
+                        <li><i class="fas fa-check-circle"></i> 主流AI工具体验</li>
+                        <li><i class="fas fa-check-circle"></i> 实用提示词技巧</li>
+                        <li><i class="fas fa-check-circle"></i> 简单应用案例</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">了解详情</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-badge intermediate">中级</div>
+                    <div class="course-icon">
+                        <img src="https://via.placeholder.com/100x100" alt="AI进阶实战">
+                    </div>
+                    <h3>AI进阶实战</h3>
+                    <p>深入学习AI工具的高级应用，优化工作流程，提升工作效率</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> AI工具组合应用</li>
+                        <li><i class="fas fa-check-circle"></i> 工作流自动化</li>
+                        <li><i class="fas fa-check-circle"></i> 高级提示词工程</li>
+                        <li><i class="fas fa-check-circle"></i> 行业应用深度案例</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">了解详情</a>
+                </div>
+                <div class="course-card">
+                    <div class="course-badge advanced">高级</div>
+                    <div class="course-icon">
+                        <img src="https://via.placeholder.com/100x100" alt="AI战略规划">
+                    </div>
+                    <h3>AI战略规划</h3>
+                    <p>面向创业者和企业管理者，系统规划AI战略布局和团队赋能</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> AI商业模式创新</li>
+                        <li><i class="fas fa-check-circle"></i> 企业AI转型路径</li>
+                        <li><i class="fas fa-check-circle"></i> 团队AI能力建设</li>
+                        <li><i class="fas fa-check-circle"></i> AI投资回报分析</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">了解详情</a>
+                </div>
+            </div>
+            <div class="academy-cta">
+                <p>根据您的需求定制专属学习路径</p>
+                <a href="#" class="btn btn-primary">免费咨询</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI工作流定制 -->
+    <section id="workflow" class="workflow">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI<span class="gradient-text">工作流定制</span></h2>
+                <p class="section-description">根据行业特点和企业需求，打造专属的AI应用解决方案</p>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>营销增长方案</h3>
+                    <p>利用AI优化内容创作、用户分析、渠道管理和转化率提升的全流程营销系统</p>
+                    <div class="solution-features">
+                        <span>内容生成</span>
+                        <span>精准投放</span>
+                        <span>数据分析</span>
+                        <span>个性化营销</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">了解详情</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>客户服务升级</h3>
+                    <p>构建智能客服系统，提升响应速度和服务质量，同时降低人力成本</p>
+                    <div class="solution-features">
+                        <span>7/24自动响应</span>
+                        <span>智能问题解决</span>
+                        <span>情感分析</span>
+                        <span>多语言支持</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">了解详情</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>研发创新加速</h3>
+                    <p>应用AI辅助产品设计、研发和测试，缩短研发周期，提升创新效率</p>
+                    <div class="solution-features">
+                        <span>创意生成</span>
+                        <span>原型设计</span>
+                        <span>代码辅助</span>
+                        <span>自动化测试</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">了解详情</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>生产制造优化</h3>
+                    <p>通过AI预测性维护、质量控制和流程优化，提升生产效率和产品质量</p>
+                    <div class="solution-features">
+                        <span>预测性维护</span>
+                        <span>质量检测</span>
+                        <span>库存优化</span>
+                        <span>能耗管理</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">了解详情</a>
+                </div>
+            </div>
+            <div class="case-studies">
+                <h3>成功案例</h3>
+                <div class="case-grid">
+                    <div class="case-card">
+                        <img src="https://via.placeholder.com/400x220" alt="成功案例" class="case-image">
+                        <div class="case-content">
+                            <div class="case-tag">营销增长</div>
+                            <h4>某电商平台AI营销转化率提升40%</h4>
+                            <p>通过AI个性化推荐和内容生成，月销售额增长230万元</p>
+                            <a href="#" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
                         </div>
-                        <div class="stat-item">
-                            <h3>100+</h3>
-                            <p>成功案例</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>50+</h3>
-                            <p>专业团队</p>
+                    </div>
+                    <div class="case-card">
+                        <img src="https://via.placeholder.com/400x220" alt="成功案例" class="case-image">
+                        <div class="case-content">
+                            <div class="case-tag">客户服务</div>
+                            <h4>某金融企业AI客服满意度提升35%</h4>
+                            <p>人工客服工作量减少60%，客户等待时间从15分钟降至30秒</p>
+                            <a href="#" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src=".vscode\20bdf44200dcfb0a8230666175792e8.png" alt="公司环境">
+            </div>
+        </div>
+    </section>
+
+    <!-- 数字人系统 -->
+    <section id="digital-human" class="digital-human">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">数字人<span class="gradient-text">系统</span></h2>
+                <p class="section-description">打造您的AI数字员工团队，24小时高效运转</p>
+            </div>
+            <div class="digital-human-content">
+                <div class="digital-human-intro">
+                    <h3>什么是数字人系统?</h3>
+                    <p>数字人系统是基于最新大语言模型技术，具备自主思考和决策能力的AI员工系统。通过精细化角色定义和知识库训练，数字人可以扮演不同岗位，执行各类任务，成为企业的得力助手。</p>
+                    <p>与传统AI工具不同，数字人拥有持续学习能力和记忆功能，可以不断积累经验，提升工作效率，为企业带来显著的成本节约和效能提升。</p>
+                </div>
+                <div class="digital-human-cards">
+                    <div class="digital-human-card">
+                        <div class="digital-human-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>AI客服专员</h3>
+                        <p>24小时在线解答客户问题，处理售前咨询和售后服务，情感识别和个性化回复</p>
+                        <div class="digital-human-features">
+                            <span>多语言支持</span>
+                            <span>情感分析</span>
+                            <span>个性化服务</span>
+                        </div>
+                    </div>
+                    <div class="digital-human-card">
+                        <div class="digital-human-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>AI内容创作师</h3>
+                        <p>生成高质量的营销文案、产品描述、社交媒体内容和行业报告</p>
+                        <div class="digital-human-features">
+                            <span>多风格创作</span>
+                            <span>SEO优化</span>
+                            <span>品牌声调一致</span>
+                        </div>
+                    </div>
+                    <div class="digital-human-card">
+                        <div class="digital-human-icon">
+                            <i class="fas fa-search-dollar"></i>
+                        </div>
+                        <h3>AI数据分析师</h3>
+                        <p>自动处理和分析业务数据，生成洞察报告，提供决策建议</p>
+                        <div class="digital-human-features">
+                            <span>多源数据整合</span>
+                            <span>趋势预测</span>
+                            <span>可视化报告</span>
+                        </div>
+                    </div>
+                    <div class="digital-human-card">
+                        <div class="digital-human-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>AI项目助理</h3>
+                        <p>协助项目管理，跟踪任务进度，发送提醒，整理会议记录</p>
+                        <div class="digital-human-features">
+                            <span>日程管理</span>
+                            <span>进度跟踪</span>
+                            <span>资源协调</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="digital-human-process">
+                    <h3>定制流程</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>需求分析</h4>
+                                <p>深入了解您的业务场景和需求，确定数字人的角色定位和功能要求</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>知识库构建</h4>
+                                <p>收集并整理企业知识资料，建立专业领域知识库，设计人格特质</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>系统开发</h4>
+                                <p>基于需求开发数字人系统，配置API接口，实现功能整合</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>测试优化</h4>
+                                <p>多轮测试和反馈优化，确保数字人表现符合预期</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>部署培训</h4>
+                                <p>系统部署上线，培训团队成员使用，持续监控和优化</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 服务项目 -->
-    <section id="services" class="services">
-        <div class="section-content">
-            <h2>服务项目</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="images\01.jpg" alt="软件开发">
-                    <h3>软件开发</h3>
-                    <p>定制化软件解决方案，满足企业个性化需求</p>
+    <!-- AI培训 -->
+    <section id="training" class="training">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI<span class="gradient-text">培训</span></h2>
+                <p class="section-description">为企业和团队提供定制化的AI能力培养方案</p>
+            </div>
+            <div class="training-content">
+                <div class="training-cards">
+                    <div class="training-card">
+                        <div class="training-icon"><i class="fas fa-building"></i></div>
+                        <h3>企业内训</h3>
+                        <p>针对企业团队的定制化AI培训项目，根据行业特点和业务需求设计课程内容。</p>
+                        <ul class="training-features">
+                            <li><i class="fas fa-check-circle"></i> 行业定制内容</li>
+                            <li><i class="fas fa-check-circle"></i> 实战案例演练</li>
+                            <li><i class="fas fa-check-circle"></i> 团队协作训练</li>
+                            <li><i class="fas fa-check-circle"></i> 持续学习支持</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">了解详情</a>
+                    </div>
+                    <div class="training-card">
+                        <div class="training-icon"><i class="fas fa-users"></i></div>
+                        <h3>线下工作坊</h3>
+                        <p>高强度、沉浸式的线下培训活动，通过实战演练快速掌握AI应用技能。</p>
+                        <ul class="training-features">
+                            <li><i class="fas fa-check-circle"></i> 小班制授课</li>
+                            <li><i class="fas fa-check-circle"></i> 专家现场指导</li>
+                            <li><i class="fas fa-check-circle"></i> 团队协作项目</li>
+                            <li><i class="fas fa-check-circle"></i> 成果当场落地</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">了解详情</a>
+                    </div>
+                    <div class="training-card">
+                        <div class="training-icon"><i class="fas fa-user-tie"></i></div>
+                        <h3>一对一咨询</h3>
+                        <p>针对个人或高管的专属咨询服务，解决特定AI应用难题和规划个人AI发展路径。</p>
+                        <ul class="training-features">
+                            <li><i class="fas fa-check-circle"></i> 个性化学习计划</li>
+                            <li><i class="fas fa-check-circle"></i> 重点难点突破</li>
+                            <li><i class="fas fa-check-circle"></i> 行业前沿洞察</li>
+                            <li><i class="fas fa-check-circle"></i> 长期成长指导</li>
+                        </ul>
+                        <a href="#" class="btn btn-outline">了解详情</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <img src="images\02.jpg" alt="技术咨询">
-                    <h3>技术咨询</h3>
-                    <p>专业的技术团队，为您提供最优解决方案</p>
+                <div class="testimonials">
+                    <h3>学员反馈</h3>
+                    <div class="testimonial-slider">
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-content">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">参加了中壹合的AI战略布局课程后，我们公司制定了完整的AI转型规划，半年内就取得了显著的效率提升和成本节约，投资回报率远超预期。</p>
+                                <div class="testimonial-author">
+                                    <img src="https://via.placeholder.com/80x80" alt="张总" class="author-avatar">
+                                    <div class="author-info">
+                                        <h4>张总</h4>
+                                        <p>某科技公司CEO</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">作为一个AI小白，通过系统学习中壹合的课程，现在我已经能熟练使用各种AI工具，工作效率提高了50%，同事们都惊讶于我的转变。</p>
+                                <div class="testimonial-author">
+                                    <img src="https://via.placeholder.com/80x80" alt="李小姐" class="author-avatar">
+                                    <div class="author-info">
+                                        <h4>李小姐</h4>
+                                        <p>自由职业设计师</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">中壹合的企业内训非常贴合我们公司的实际需求，讲师不仅理论扎实，而且有丰富的实战经验，培训结束后团队能立即应用所学知识解决实际问题。</p>
+                                <div class="testimonial-author">
+                                    <img src="https://via.placeholder.com/80x80" alt="王经理" class="author-avatar">
+                                    <div class="author-info">
+                                        <h4>王经理</h4>
+                                        <p>某企业人力资源总监</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <img src="images\03.jpg" alt="系统集成">
-                    <h3>系统集成</h3>
-                    <p>全面的系统集成服务，助力企业数字化转型</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资源中心 -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">资源<span class="gradient-text">中心</span></h2>
+                <p class="section-description">精选AI工具、报告和最新资讯，助您持续学习成长</p>
+            </div>
+            <div class="resources-tabs">
+                <button class="tab-btn active" data-tab="tools">AI工具库</button>
+                <button class="tab-btn" data-tab="reports">行业报告</button>
+                <button class="tab-btn" data-tab="news">AI动态</button>
+            </div>
+            <div class="tab-content active" id="tools-content">
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="https://via.placeholder.com/50x50" alt="AI文案助手">
+                        </div>
+                        <div class="tool-info">
+                            <h3>AI文案助手</h3>
+                            <p>智能生成各类营销文案、产品描述、邮件等内容</p>
+                            <div class="tool-tags">
+                                <span>文案生成</span>
+                                <span>营销</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-small">了解详情</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="https://via.placeholder.com/50x50" alt="AI设计师">
+                        </div>
+                        <div class="tool-info">
+                            <h3>AI设计师</h3>
+                            <p>一键生成专业级别的图形设计、UI界面、插画等</p>
+                            <div class="tool-tags">
+                                <span>设计</span>
+                                <span>创意</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-small">了解详情</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="https://via.placeholder.com/50x50" alt="智能数据分析">
+                        </div>
+                        <div class="tool-info">
+                            <h3>智能数据分析</h3>
+                            <p>自动化数据处理、可视化和洞察发现工具</p>
+                            <div class="tool-tags">
+                                <span>数据分析</span>
+                                <span>商业智能</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-small">了解详情</a>
+                    </div>
+                    <div class="tool-card">
+                        <div class="tool-icon">
+                            <img src="https://via.placeholder.com/50x50" alt="AI翻译专家">
+                        </div>
+                        <div class="tool-info">
+                            <h3>AI翻译专家</h3>
+                            <p>多语言智能翻译，支持专业术语和行业语境</p>
+                            <div class="tool-tags">
+                                <span>翻译</span>
+                                <span>国际化</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-small">了解详情</a>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a href="#" class="btn btn-outline">查看全部工具 <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="tab-content" id="reports-content">
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <div class="report-cover">
+                            <img src="https://via.placeholder.com/200x280" alt="2024年AI行业趋势报告">
+                            <div class="report-tag">最新</div>
+                        </div>
+                        <div class="report-info">
+                            <h3>2024年AI行业趋势报告</h3>
+                            <p>全面分析AI技术发展趋势和商业应用前景</p>
+                            <a href="#" class="btn btn-small">免费下载</a>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-cover">
+                            <img src="https://via.placeholder.com/200x280" alt="AI应用案例白皮书">
+                        </div>
+                        <div class="report-info">
+                            <h3>AI应用案例白皮书</h3>
+                            <p>10个行业50个AI应用案例深度解析</p>
+                            <a href="#" class="btn btn-small">免费下载</a>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-cover">
+                            <img src="https://via.placeholder.com/200x280" alt="AI赋能企业数字化转型指南">
+                        </div>
+                        <div class="report-info">
+                            <h3>AI赋能企业数字化转型指南</h3>
+                            <p>从战略到落地的全方位实施手册</p>
+                            <a href="#" class="btn btn-small">免费下载</a>
+                        </div>
+                    </div>
+                    <div class="report-card">
+                        <div class="report-cover">
+                            <img src="https://via.placeholder.com/200x280" alt="AI工具评测报告">
+                        </div>
+                        <div class="report-info">
+                            <h3>AI工具评测报告</h3>
+                            <p>30款热门AI工具的全面评测和比较</p>
+                            <a href="#" class="btn btn-small">免费下载</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="news-content">
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="AI最新动态">
+                            <div class="news-date">
+                                <span class="day">15</span>
+                                <span class="month">六月</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-tags">
+                                <span>行业动态</span>
+                                <span>前沿技术</span>
+                            </div>
+                            <h3>GPT-5将在年内发布，多模态能力全面升级</h3>
+                            <p>根据OpenAI最新消息，GPT-5将具备更强的多模态理解能力和推理能力，彻底革新AI应用场景...</p>
+                            <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="AI应用案例">
+                            <div class="news-date">
+                                <span class="day">08</span>
+                                <span class="month">六月</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-tags">
+                                <span>案例分析</span>
+                                <span>零售行业</span>
+                            </div>
+                            <h3>某知名零售巨头借助AI实现全链路数字化转型</h3>
+                            <p>通过AI技术重构供应链、营销和客户服务系统，该零售巨头在半年内实现营收增长20%...</p>
+                            <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/400x250" alt="AI政策解读">
+                            <div class="news-date">
+                                <span class="day">01</span>
+                                <span class="month">六月</span>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-tags">
+                                <span>政策解读</span>
+                                <span>法规动态</span>
+                            </div>
+                            <h3>最新AI监管法规解读：企业如何合规发展</h3>
+                            <p>近期多国发布AI监管框架，本文深入解读监管趋势并提供企业合规建议...</p>
+                            <a href="#" class="read-more">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a href="#" class="btn btn-outline">查看更多动态 <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -84,40 +682,149 @@
 
     <!-- 联系我们 -->
     <section id="contact" class="contact">
-        <div class="section-content">
-            <h2>联系我们</h2>
-            <div class="contact-container">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">联系<span class="gradient-text">我们</span></h2>
+                <p class="section-description">有任何问题或需求，欢迎随时联系，我们将为您提供专业服务</p>
+            </div>
+            <div class="contact-content">
                 <div class="contact-info">
                     <div class="info-item">
-                        <h4>地址</h4>
-                        <p>北京市朝阳区科技园A座100号</p>
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>公司地址</h3>
+                            <p>北京市朝阳区建国路88号</p>
+                            <p>SOHO现代城A座25层</p>
+                        </div>
                     </div>
                     <div class="info-item">
-                        <h4>电话</h4>
-                        <p>010-12345678</p>
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>联系电话</h3>
+                            <p>+86 010-88888888</p>
+                            <p>周一至周五 9:00-18:00</p>
+                        </div>
                     </div>
                     <div class="info-item">
-                        <h4>邮箱</h4>
-                        <p>contact@zhongyihe.com</p>
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>电子邮箱</h3>
+                            <p>contact@zhongyihe.com</p>
+                            <p>24小时内回复</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-bilibili"></i></a>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="您的姓名" required>
-                    <input type="email" placeholder="电子邮箱" required>
-                    <input type="tel" placeholder="联系电话" required>
-                    <textarea placeholder="请描述您的需求" required></textarea>
-                    <button type="submit">发送信息</button>
-                </form>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="电子邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="联系电话" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service">
+                                <option value="" disabled selected>您感兴趣的服务</option>
+                                <option value="academy">AI学院课程</option>
+                                <option value="workflow">AI工作流定制</option>
+                                <option value="digital-human">数字人系统</option>
+                                <option value="training">AI培训</option>
+                                <option value="other">其他服务</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="请描述您的需求..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">提交需求</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 页脚 -->
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 中壹合科技 版权所有</p>
-            <p>京ICP备xxxxxxxx号</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 50 24" class="logo-icon">
+                        <defs>
+                            <linearGradient id="footer-logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#1E88E5" />
+                                <stop offset="100%" stop-color="#00BFA5" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M1,12 C5,5 10,18 15,12 C20,6 25,18 30,12 C35,6 40,18 45,12 C50,6 49,12 49,12" stroke="url(#footer-logo-gradient)" stroke-width="3" fill="none"/>
+                        <circle cx="15" cy="12" r="3" fill="#1E88E5" />
+                        <circle cx="30" cy="12" r="3" fill="#00BFA5" />
+                    </svg>
+                    <div class="footer-logo-text">
+                        <span class="logo-text">中壹合</span>
+                        <span class="logo-subtitle">AI时代的浪潮儿</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-nav">
+                        <h3>网站导航</h3>
+                        <ul>
+                            <li><a href="#home">首页</a></li>
+                            <li><a href="#academy">AI学院</a></li>
+                            <li><a href="#workflow">AI工作流</a></li>
+                            <li><a href="#digital-human">数字人系统</a></li>
+                            <li><a href="#training">AI培训</a></li>
+                            <li><a href="#resources">资源中心</a></li>
+                            <li><a href="#contact">联系我们</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-services">
+                        <h3>服务项目</h3>
+                        <ul>
+                            <li><a href="#academy">AI小白入门</a></li>
+                            <li><a href="#academy">AI进阶课程</a></li>
+                            <li><a href="#workflow">行业解决方案</a></li>
+                            <li><a href="#digital-human">数字员工系统</a></li>
+                            <li><a href="#training">企业内训</a></li>
+                            <li><a href="#training">一对一咨询</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>联系方式</h3>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt"></i> 北京市朝阳区建国路88号</li>
+                            <li><i class="fas fa-phone-alt"></i> +86 010-88888888</li>
+                            <li><i class="fas fa-envelope"></i> contact@zhongyihe.com</li>
+                        </ul>
+                        <div class="footer-social">
+                            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-bilibili"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 中壹合新媒体有限公司 版权所有</p>
+                <p>京ICP备XXXXXXXX号</p>
+            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

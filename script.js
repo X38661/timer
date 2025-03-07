@@ -1,112 +1,150 @@
-// 获取DOM元素
-const timeDisplay = document.querySelector('.time-display');
-const startBtn = document.getElementById('startBtn');
-const pauseBtn = document.getElementById('pauseBtn');
-const resetBtn = document.getElementById('resetBtn');
-const timerContainer = document.querySelector('.timer');
-
-// 计时器变量
-let startTime = 0;
-let elapsedTime = 0;
-let timerInterval;
-let isRunning = false;
-
-// 格式化时间显示
-function formatTime(timeInMilliseconds) {
-    // 计算小时、分钟、秒和毫秒
-    const hours = Math.floor(timeInMilliseconds / 3600000);
-    const minutes = Math.floor((timeInMilliseconds % 3600000) / 60000);
-    const seconds = Math.floor((timeInMilliseconds % 60000) / 1000);
-    const milliseconds = Math.floor((timeInMilliseconds % 1000) / 10);
-
-    // 格式化为 HH:MM:SS.MS
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(2, '0')}`;
-}
-
-// 更新计时器显示
-function updateDisplay() {
-    const currentTime = isRunning ? Date.now() - startTime + elapsedTime : elapsedTime;
-    timeDisplay.textContent = formatTime(currentTime);
-}
-
-// 开始计时
-function startTimer() {
-    if (!isRunning) {
-        isRunning = true;
-        startTime = Date.now();
-        timerInterval = setInterval(updateDisplay, 10); // 每10毫秒更新一次
-        
-        // 切换按钮显示
-        startBtn.style.display = 'none';
-        pauseBtn.style.display = 'flex';
-        
-        // 添加运行中的动画类
-        timerContainer.classList.add('running');
-    }
-}
-
-// 暂停计时
-function pauseTimer() {
-    if (isRunning) {
-        isRunning = false;
-        clearInterval(timerInterval);
-        elapsedTime += Date.now() - startTime;
-        
-        // 切换按钮显示
-        startBtn.style.display = 'flex';
-        pauseBtn.style.display = 'none';
-        
-        // 移除运行中的动画类
-        timerContainer.classList.remove('running');
-    }
-}
-
-// 重置计时器
-function resetTimer() {
-    isRunning = false;
-    clearInterval(timerInterval);
-    startTime = 0;
-    elapsedTime = 0;
-    updateDisplay();
+// 等待DOM完全加载
+document.addEventListener('DOMContentLoaded', function() {
+    // 导航菜单活动状态与滚动监听
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    // 确保开始按钮显示
-    startBtn.style.display = 'flex';
-    pauseBtn.style.display = 'none';
-    
-    // 移除运行中的动画类
-    timerContainer.classList.remove('running');
-}
-
-// 添加事件监听器
-startBtn.addEventListener('click', startTimer);
-pauseBtn.addEventListener('click', pauseTimer);
-resetBtn.addEventListener('click', resetTimer);
-
-// 初始化显示
-updateDisplay();
-
-// 添加键盘快捷键
-document.addEventListener('keydown', (e) => {
-    // 空格键开始/暂停
-    if (e.code === 'Space') {
-        e.preventDefault(); // 防止页面滚动
-        if (isRunning) {
-            pauseTimer();
-        } else {
-            startTimer();
-        }
+    // 滚动监听函数
+    function scrollSpy() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('active');
+            }
+        });
     }
     
-    // R键重置
-    if (e.code === 'KeyR') {
-        resetTimer();
+    // 监听滚动事件
+    window.addEventListener('scroll', scrollSpy);
+    
+    // 移动端菜单切换
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+    
+    menuToggle?.addEventListener('click', function() {
+        nav.classList.toggle('mobile-active');
+        menuToggle.classList.toggle('active');
+    });
+    
+    // 菜单链接点击后关闭移动菜单
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('mobile-active');
+            menuToggle.classList.remove('active');
+        });
+    });
+    
+    // 资源中心标签页切换
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 移除所有按钮的active类
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            // 给当前点击的按钮添加active类
+            button.classList.add('active');
+            
+            // 获取对应的内容区域ID
+            const tabId = button.getAttribute('data-tab') + '-content';
+            
+            // 隐藏所有内容区域
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // 显示当前选中的内容区域
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+    
+    // 客户评价轮播
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    
+    // 切换到指定轮播图
+    function showSlide(index) {
+        testimonialSlides.forEach(slide => slide.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        testimonialSlides[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentSlide = index;
     }
+    
+    // 点击指示点切换轮播图
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+        });
+    });
+    
+    // 自动轮播
+    function autoSlide() {
+        currentSlide = (currentSlide + 1) % testimonialSlides.length;
+        showSlide(currentSlide);
+    }
+    
+    // 每5秒切换一次
+    let slideInterval = setInterval(autoSlide, 5000);
+    
+    // 鼠标悬停时暂停自动轮播
+    const testimonialSlider = document.querySelector('.testimonial-slider');
+    
+    testimonialSlider?.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+    
+    testimonialSlider?.addEventListener('mouseleave', () => {
+        slideInterval = setInterval(autoSlide, 5000);
+    });
+    
+    // 表单提交处理
+    const form = document.getElementById('contact-form');
+    
+    form?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const formValues = Object.fromEntries(formData.entries());
+        
+        // 这里可以添加表单验证逻辑
+        
+        // 模拟表单提交成功
+        alert('感谢您的咨询！我们将尽快与您联系。');
+        form.reset();
+    });
+    
+    // 滚动动画效果
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.feature-card, .course-card, .solution-card, .digital-human-card, .training-card, .tool-card, .report-card, .news-card, .info-item');
+        
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('animate');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', animateOnScroll);
+    
+    // 初始调用一次，确保页面加载时已显示的元素有动画
+    animateOnScroll();
+    
+    // 初始调用一次确保导航激活状态正确
+    scrollSpy();
 });
-
-// 添加页面可见性变化监听，当用户切换标签页时暂停计时
-document.addEventListener('visibilitychange', () => {
-    if (document.hidden && isRunning) {
-        // 保存当前状态并暂停
-        pauseTimer();
-    }
-}); 
